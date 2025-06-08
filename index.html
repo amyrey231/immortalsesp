@@ -9,13 +9,12 @@
 <meta property="og:title" content="Immortals Esport Clan" />
 <meta property="og:description" content="Join Immortals, the elite COD Mobile clan. Compete. Conquer. Rise above." />
 <meta property="og:image" content="Immortals_Esport-removebg-preview" />
-<meta property="og:url" content="https://yourdomain.com" />
+<meta property="og:url" content="https://immortalsesp.vercel.app" />
 <meta name="twitter:card" content="summary_large_image">
 
   <title>Immortals Esport</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- AOS -->
@@ -26,9 +25,7 @@
     body {
       background-color: #0f0f0f;
       color: #e5e5e5;
-    }
-    .section-title {
-      @apply text-3xl font-bold text-red-500 mb-6 text-center;
+   
     }
     .social-icons a {
       color: #e5e5e5;
@@ -43,34 +40,63 @@
 </head>
 <body class="font-sans">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#home">
-      <img src="Immortals_Esport-removebg-preview.png" width="40" class="me-2" alt="Logo">
-      Immortals Esport
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto text-center gap-2">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
-        <li class="nav-item"><a class="nav-link" href="#join">Join Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-        <li class="nav-item"><a class="nav-link" href="#achievements">Leaderboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="#book-scrim">Book Scrim</a></li>
 
-      </ul>
+    
+    <!-- Tailwind Navbar -->
+<nav class="bg-black text-white shadow sticky top-0 z-50">
+ <!-- Fixed Tailwind Navbar -->
+<div x-data="{ open: false }">
+  <nav class="bg-black text-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="Immortals_Esport-removebg-preview.png" class="h-10 mr-3" alt="Logo" />
+          <span class="font-bold text-xl text-red-500">Immortals Esport</span>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="-mr-2 flex md:hidden">
+          <button @click="open = !open" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex gap-6">
+          <a href="#home" class="hover:text-red-500">Home</a>
+          <a href="#about" class="hover:text-red-500">About</a>
+          <a href="#members" class="hover:text-red-500">Members</a>
+          <a href="#join" class="hover:text-red-500">Join Us</a>
+          <a href="#news" class="hover:text-red-500">News</a>
+          <a href="#achievements" class="hover:text-red-500">Leaderboard</a>
+          <a href="#shop" class="hover:text-red-500">Shop</a>
+          <a href="#contact" class="hover:text-red-500">Contact</a>
+          <a href="#book-scrim" class="hover:text-red-500">Book Scrim</a>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <!-- Mobile Menu -->
+    <div x-show="open" class="md:hidden px-4 pb-4">
+      <a href="#home" class="block py-2">Home</a>
+      <a href="#about" class="block py-2">About</a>
+      <a href="#members" class="block py-2">Members</a>
+      <a href="#join" class="block py-2">Join Us</a>
+      <a href="#news" class="block py-2">News</a>
+      <a href="#achievements" class="block py-2">Leaderboard</a>
+      <a href="#shop" class="block py-2">Shop</a>
+      <a href="#contact" class="block py-2">Contact</a>
+      <a href="#book-scrim" class="block py-2">Book Scrim</a>
+    </div>
+  </nav>
+</div>
+
 </nav>
+
 
 
 <!-- Hero -->
@@ -79,8 +105,9 @@
     <img src="Immortals_Esport-removebg-preview.png" alt="Immortals Logo" class="w-32 md:w-40 mx-auto mb-6">
     <h1 class="text-4xl md:text-6xl font-bold text-red-600 mb-4">Immortals Esport</h1>
     <p class="text-lg md:text-xl text-gray-300 mb-6">Join the fiercest warriors in COD Mobile. Compete. Conquer. Rise above.</p>
-    <a href="#join" class="btn btn-danger px-5 py-2 text-lg shadow-lg">Join the Clan</a>
-  </div>
+<a href="#join" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg text-lg shadow-lg transition duration-300">
+  Join the Clan
+</a>  </div>
 </section>
 
 
@@ -88,7 +115,11 @@
 <section class="py-20 bg-[#111] px-4" id="about">
   <h2 class="section-title" data-aos="fade-right">About Us</h2>
   <div class="max-w-3xl mx-auto text-center text-gray-400" data-aos="fade-up">
-    <p>Immortals eSport: Where legends are born. Our COD Mobile clan is built on a foundation of passion, dedication, and a relentless pursuit of victory. If you're a skilled player looking for a competitive edge, join our ranks and become immortal today! ﻿
+    <p>Immortals Esport is a competitive Call of Duty: Mobile clan that focuses exclusively on Battle Royale (BR) mode. We don’t play multiplayer — our mission is to dominate the BR arena with precision, teamwork, and elite strategy.
+
+Built for serious players, our clan is made up of skilled BR warriors who thrive in ranked matches, custom scrims, and high-stakes tourneys. Every drop, every rotation, every fight — we move as a unit and aim to outplay every squad we face.
+
+If you’re a committed BR player looking for a disciplined, active, and competitive clan that values teamwork and excellence, Immortals is your next battleground. Join us and become a legend. ﻿
 </p>
   </div>
 </section>
@@ -102,12 +133,12 @@
   <!-- GhostX -->
   <div class="bg-[#1a1a1a] p-6 rounded-xl text-center shadow-lg border border-red-600">
     <img src="My logo.jpg" alt="GhostX" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-red-500">
-    <h4 class="text-xl font-bold text-red-400">IGN: SEGZY・iM</h4>
+    <h4 class="text-xl font-bold text-red-400">IGN: SEGZZY・iM</h4>
     <p class="text-sm text-gray-400 mb-2">🛡️ Clan Leader – Shotgunner</p>
     <p class="text-xs text-gray-500 leading-relaxed">
       Device: Samsug s20 FE 5G<br>
       Loadout: KRM + Trophy System<br>
-      K/D: 6.1 • MVPs: 22
+       MVPs: 1802
     </p>
     <div class="mt-3 flex justify-center gap-4 text-gray-400 text-lg">
       <a href="https://www.tiktok.com/@sjsegzy?_t=ZM-8x0O0nkrHK4&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -117,7 +148,7 @@
 
   <!-- BlazR -->
   <div class="bg-[#1a1a1a] p-6 rounded-xl text-center shadow-lg border border-purple-600">
-    <img src="avatars/blazr.jpg" alt="BlazR" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-purple-500">
+    <img src="https://thumbs.dreamstime.com/b/minimalist-silhouette-illustration-features-gamer-avatar-wearing-headphones-embodying-modern-trendy-aesthetic-356570261.jpg" alt="BlazR" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-purple-500">
     <h4 class="text-xl font-bold text-purple-400">IGN: LilBen・iM</h4>
     <p class="text-sm text-gray-400 mb-2">🎯 Vice Leader – Assaulter</p>
     <p class="text-xs text-gray-500 leading-relaxed">
@@ -133,7 +164,7 @@
 
   <!-- Fury -->
   <div class="bg-[#1a1a1a] p-6 rounded-xl text-center shadow-lg border border-blue-600">
-    <img src="avatars/fury.jpg" alt="Fury" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-blue-500">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/023/542/079/small_2x/gamer-minimalist-and-simple-silhouette-illustration-vector.jpg" alt="Fury" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-blue-500">
     <h4 class="text-xl font-bold text-blue-400">IGN: West・iM</h4>
     <p class="text-sm text-gray-400 mb-2">🔧 Core Member – Supporter</p>
     <p class="text-xs text-gray-500 leading-relaxed">
@@ -160,7 +191,7 @@
     <div class="bg-[#1a1a1a] rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row gap-4 p-4">
       <!-- Optional Thumbnail -->
       <div class="w-full md:w-1/3">
-        <img src="scrim_thumbnail.jpg" alt="Scrim" class="w-full h-40 object-cover rounded-lg">
+        <img src="https://media.istockphoto.com/id/1355378550/vector/megaphone-hand-business-concept-with-text-upcoming-events-vector-stock-illustration.jpg?s=612x612&w=0&k=20&c=D8iICHXW2Nq6RDruZvPzdsSHeo55ey8LrBoaydzM3Kk=" alt="Scrim" class="w-full h-40 object-cover rounded-lg">
       </div>
       <div class="flex flex-col justify-between w-full md:w-2/3">
         <div>
@@ -176,7 +207,7 @@
     <div class="bg-[#1a1a1a] rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row gap-4 p-4">
       <!-- Optional Thumbnail -->
       <div class="w-full md:w-1/3">
-        <img src="tournament_winner.jpg" alt="Victory" class="w-full h-40 object-cover rounded-lg">
+        <img src="https://t3.ftcdn.net/jpg/05/67/74/42/360_F_567744258_Th2Yjsk6BcKJ0T81KQSpcH6wjFV23TjE.jpg" alt="Victory" class="w-full h-40 object-cover rounded-lg">
       </div>
       <div class="flex flex-col justify-between w-full md:w-2/3">
         <div>
@@ -194,48 +225,19 @@
 <section class="py-20 bg-[#111] px-4" id="join">
   <h2 class="section-title" data-aos="fade-right">Join Immortals</h2>
   <div class="max-w-xl mx-auto" data-aos="fade-up">
-    <form action="https://formspree.io/f/meokenkw" method="POST" enctype="multipart/form-data" class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg">
-  <input type="hidden" name="_subject" value="New Immortals Clan Application">
-  <input type="hidden" name="_next" value="https://immortalsesp.vercel.app/submitted.html">
+    <div class="rounded-xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
+  <iframe
+    src="https://tally.so/r/wbEk12"
+    width="100%"
+    height="600"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Join Immortals Form"
+    allow="camera; microphone; file"
+  ></iframe>
+</div>
 
-  <div class="mb-4">
-    <label class="block mb-1">Your Name</label>
-    <input type="text" name="Real Name" class="form-control" required>
-  </div>
-
-  <div class="mb-4">
-    <label class="block mb-1">IGN (In-Game Name)</label>
-    <input type="text" name="IGN" class="form-control" required>
-  </div>
-
-  <div class="mb-4">
-    <label class="block mb-1">Role</label>
-    <select name="Role" class="form-select" required>
-      <option>Assaulter</option>
-      <option>Shotgunner</option>
-      <option>Sniper</option>
-      <option>Supporter</option>
-      <option>Medic</option>
-    </select>
-  </div>
-
-  <div class="mb-4">
-    <label class="block mb-1">Contact (WhatsApp or Discord Username)</label>
-    <input type="text" name="Contact" class="form-control" required>
-  </div>
-
-  <div class="mb-4">
-    <label class="block mb-1">Why do you want to join?</label>
-    <textarea name="Reason" class="form-control" rows="3" required></textarea>
-  </div>
-
-  <div class="mb-4">
-    <label class="block mb-1">Upload your Profile Screenshot</label>
-    <input type="file" name="Screenshot" class="form-control" accept="image/*" required>
-  </div>
-
-  <button type="submit" class="btn btn-danger w-full">Submit Application</button>
-</form>
 
   </div>
 </section>
@@ -255,7 +257,7 @@
 
     <!-- Testimonial Card 2 -->
     <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
-      <img src="avatars/fury.jpg" alt="Fury" class="w-16 h-16 rounded-full border-2 border-blue-500 mb-3">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/023/542/079/small_2x/gamer-minimalist-and-simple-silhouette-illustration-vector.jpg" alt="Fury" class="w-16 h-16 rounded-full border-2 border-blue-500 mb-3">
       <p class="text-sm italic mb-3">"Before Immortals, I was just grinding solo. Now I’m MVP in ranked scrims!"</p>
       <h4 class="font-bold text-blue-400">West</h4>
       <span class="text-xs text-gray-500">Supporter –  Assaulter</span>
@@ -263,7 +265,7 @@
 
     <!-- Testimonial Card 3 -->
     <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
-      <img src="avatars/blazr.jpg" alt="BlazR" class="w-16 h-16 rounded-full border-2 border-purple-500 mb-3">
+      <img src="https://thumbs.dreamstime.com/b/minimalist-silhouette-illustration-features-gamer-avatar-wearing-headphones-embodying-modern-trendy-aesthetic-356570261.jpg" alt="BlazR" class="w-16 h-16 rounded-full border-2 border-purple-500 mb-3">
       <p class="text-sm italic mb-3">"The strategy, callouts, and vibe here are elite. This clan isn’t for casuals."</p>
       <h4 class="font-bold text-purple-400">LilBen</h4>
       <span class="text-xs text-gray-500">Vice Leader – Assaulter</span>
@@ -296,8 +298,8 @@
           <td>Segzy</td>
           <td><span class="bg-red-600 text-white text-xs px-2 py-1 rounded-full">Assaulter</span></td>
           <td>Leader</td>
-          <td>19,000</td>
-          <td>1000</td>
+          <td>28,112</td>
+          <td>7155</td>
           <td class="text-green-400 font-bold">83%</td>
         </tr>
         <tr class="bg-[#1a1a1a] rounded-lg shadow text-white">
@@ -429,32 +431,20 @@
       Are you a clan looking to test your strength? Book a scrim with Immortals below. We'll confirm if the time works for us.
     </p>
 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg">
-      <input type="hidden" name="_subject" value="New Scrim Booking Request">
-      <input type="hidden" name="_next" value="https://immortalsesp.vercel.app/submitted.html">
+    <div class="rounded-xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
+  <iframe
+    src="https://tally.so/r/mOePNA"
+    width="100%"
+    height="600"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Join Immortals Form"
+    allow="camera; microphone; file"
+  ></iframe>
+</div>
 
-      <div class="mb-4">
-        <label class="block mb-1 text-gray-300">Your Clan Name</label>
-        <input type="text" name="Clan Name" class="form-control" required>
-      </div>
 
-      <div class="mb-4">
-        <label class="block mb-1 text-gray-300">Clan Leader Contact (WhatsApp/Discord)</label>
-        <input type="text" name="Contact" class="form-control" required>
-      </div>
-
-      <div class="mb-4">
-        <label class="block mb-1 text-gray-300">Preferred Date & Time</label>
-        <input type="datetime-local" name="Preferred Time" class="form-control" required>
-      </div>
-
-      <div class="mb-4">
-        <label class="block mb-1 text-gray-300">Game Mode / Rules (Optional)</label>
-        <textarea name="Game Mode" class="form-control" rows="3" placeholder="e.g. S&D • Best of 5 • No LMGs"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-danger w-full">Submit Scrim Request</button>
-    </form>
   </div>
 </section>
 
@@ -466,26 +456,39 @@
 
     <!-- Hoodie -->
     <div class="bg-[#1a1a1a] p-4 rounded-xl text-center shadow-lg">
-      <img src="merch/hoodie.jpg" alt="Clan Hoodie" class="rounded-lg w-full h-48 object-cover mb-4">
-      <h3 class="text-lg font-bold text-red-400 mb-2">Immortals Hoodie</h3>
-      <p class="text-sm text-gray-400 mb-4">Premium black hoodie with clan logo.</p>
-      <a href="https://paystack.com/pay/immortalshoodie" target="_blank" class="btn btn-danger">Buy for ₦12,000</a>
-    </div>
+      <img src="ChatGPT Image Jun 8, 2025, 10_56_57 AM.png" alt="Clan Hoodie" class="rounded-lg w-full h-48 object-cover mb-4">
+      <h3 class="text-lg font-bold text-red-400 mb-2">Immortals T-Shirt</h3>
+      <p class="text-sm text-gray-400 mb-4">Premium black T-Shirt with clan logo.</p>
+<a href="https://paystack.com/pay/immortalshoodie" 
+   target="_blank" 
+   class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 inline-block">
+  Buy for ₦15,000
+</a>    </div>
 
     <!-- Sticker Pack -->
     <div class="bg-[#1a1a1a] p-4 rounded-xl text-center shadow-lg">
-      <img src="merch/stickers.jpg" alt="Stickers" class="rounded-lg w-full h-48 object-cover mb-4">
-      <h3 class="text-lg font-bold text-red-400 mb-2">Sticker Pack</h3>
-      <p class="text-sm text-gray-400 mb-4">Digital download pack of Immortals-themed CoDM stickers.</p>
-      <a href="https://paystack.com/pay/immortalsstickers" target="_blank" class="btn btn-danger">Buy for ₦2,500</a>
-    </div>
+      <img src="ChatGPT Image Jun 8, 2025, 10_42_03 AM.png" alt="Stickers" class="rounded-lg w-full h-48 object-cover mb-4">
+      <h3 class="text-lg font-bold text-red-400 mb-2">Custom Immortals Wallpapers & Stickers
+</h3>
+      <p class="text-sm text-gray-400 mb-4">Show your Immortals pride with exclusive high-res wallpapers for your phone and desktop. Featuring our logo, BR themes, and battle-ready vibes — perfect for every true warrior.
+
+</p>
+<a href="https://paystack.com/pay/immortalshoodie" 
+   target="_blank" 
+   class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 inline-block">
+  Buy for ₦2500
+</a>    </div>
 
     <!-- Support / Donation -->
     <div class="bg-[#1a1a1a] p-4 rounded-xl text-center shadow-lg">
-      <img src="merch/donation.jpg" alt="Support" class="rounded-lg w-full h-48 object-cover mb-4">
+      <img src="https://static.vecteezy.com/system/resources/previews/013/766/012/non_2x/donation-box-and-charity-concept-human-hands-putting-money-cash-love-and-heart-to-donation-box-together-helping-doing-charity-illustration-free-vector.jpg" alt="Support" class="rounded-lg w-full h-48 object-cover mb-4">
       <h3 class="text-lg font-bold text-red-400 mb-2">Support the Clan</h3>
       <p class="text-sm text-gray-400 mb-4">Donate to help with scrims, training, and tourneys.</p>
-      <a href="https://paystack.shop/pay/immortalsdonate" target="_blank" class="btn btn-danger">Donate Now</a>
+      <a href="https://paystack.com/pay/immortalshoodie" 
+   target="_blank" 
+   class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 inline-block">
+  Donate
+</a>
     </div>
 
   </div>
@@ -521,9 +524,17 @@
 </footer>
 
 <!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+  AOS.init({
+    duration: 1000,        // slow animation
+    easing: 'ease-in-out', // smooth curve
+    once: false            // animate every time it scrolls into view
+  });
+</script>
+
 
 </body>
 </html>
